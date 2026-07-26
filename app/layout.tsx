@@ -1,10 +1,15 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Caveat } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
+});
+
+const caveat = Caveat({
+  subsets: ["latin"],
+  variable: "--font-caveat",
 });
 
 export const metadata: Metadata = {
@@ -24,7 +29,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} scroll-smooth antialiased bg-[#030712] text-slate-50`} suppressHydrationWarning>
+    <html lang="en" className={`${inter.variable} ${caveat.variable} scroll-smooth antialiased bg-[#030712] text-slate-50`} suppressHydrationWarning>
       <body className="min-h-screen flex flex-col overflow-x-hidden">
         {children}
       </body>

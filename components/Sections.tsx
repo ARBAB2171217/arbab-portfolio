@@ -1,105 +1,122 @@
 import React from "react";
 import Link from "next/link";
-import { GithubIcon, LinkedinIcon } from "./Icons";
+import { GithubIcon, LinkedinIcon, MailIcon } from "./Icons";
 import { ProjectImageLightbox } from "./ProjectImageLightbox";
 
 export const Hero = () => {
   return (
-    <section id="home" className="relative flex items-center pt-24 pb-16 overflow-hidden bg-grid-pattern">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[800px] h-[800px] bg-brand-purple/10 rounded-full blur-[120px] opacity-60 pointer-events-none"></div>
+    <section id="home" className="relative pt-32 pb-16 md:pt-40 md:pb-32 overflow-hidden bg-grid-pattern min-h-[90vh] flex items-center">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[1200px] h-[800px] bg-brand-purple/10 rounded-full blur-[120px] opacity-40 pointer-events-none z-0"></div>
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full grid lg:grid-cols-[1.2fr_0.8fr] gap-12 lg:gap-16 items-center">
-        <div className="animate-fade-in-up">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 mb-8 backdrop-blur-sm">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse-glow"></span>
-            <span className="text-xs font-medium text-slate-300">Building AI-powered systems</span>
+      {/* Portrait integration with mask */}
+      <div className="absolute right-0 top-1/2 -translate-y-1/2 w-full max-w-[800px] h-full lg:w-[50%] lg:right-0 z-0 pointer-events-none overflow-hidden opacity-30 md:opacity-50 lg:opacity-100 flex items-end md:items-center justify-end">
+        <div className="relative w-full h-[90vh] min-h-[600px]">
+          <div 
+            className="absolute inset-0 bg-no-repeat bg-right-bottom md:bg-right-bottom"
+            style={{ 
+              backgroundImage: "url('/portrait.jpg')", 
+              backgroundSize: "contain",
+              maskImage: "linear-gradient(to top, transparent 5%, black 40%, black 80%, transparent 100%), linear-gradient(to right, transparent 5%, black 40%)",
+              WebkitMaskImage: "linear-gradient(to top, transparent 0%, black 20%, black 80%, transparent 100%), linear-gradient(to right, transparent 0%, black 30%, black 100%)",
+              WebkitMaskComposite: "source-in",
+              maskComposite: "intersect"
+            }}
+          ></div>
+        </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full flex flex-col justify-center">
+        <div className="max-w-3xl animate-fade-in-up">
+          <div className="flex items-center gap-4 mb-10 mt-8">
+            <div className="w-8 h-0.5 bg-brand-purple/80"></div>
+            <span className="text-xs font-bold tracking-[0.15em] text-brand-purple uppercase">AI & Backend Developer</span>
           </div>
           
-          <h1 className="clamp-h1 font-bold tracking-tighter mb-4 text-slate-50">
-            Arbab <span className="text-gradient">Ali</span>
+          <h1 className="text-[5rem] sm:text-[6rem] md:text-[7rem] lg:text-[8rem] font-black tracking-tight mb-2 text-white leading-[0.9]">
+            ARBAB <br/> <span className="text-gradient">ALI</span>
           </h1>
-          <h2 className="clamp-h3 font-medium mb-6 text-slate-300">
-            AI Developer • Full-Stack Builder
+          
+          <div className="relative inline-block mb-10">
+            <div className="text-5xl md:text-6xl lg:text-7xl text-brand-purple font-signature opacity-80 -rotate-3 pl-4">
+              Arbab Ali
+            </div>
+            <svg className="absolute -bottom-2 left-0 w-full h-3 text-brand-purple/40 -rotate-2" preserveAspectRatio="none" viewBox="0 0 100 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"><path d="M0 10 Q 50 20 100 5"></path></svg>
+          </div>
+
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-medium mb-4 text-slate-200 max-w-2xl leading-tight text-balance">
+            Building <span className="text-brand-purple">intelligent systems</span> <br/>
+            for real-world problems.
           </h2>
-          <p className="text-lg text-slate-400 mb-8 max-w-xl leading-relaxed text-balance">
-            I build intelligent systems, AI agents, and real-world software products that solve complex problems. Focused on creating secure and scalable applications.
+          
+          <p className="text-sm md:text-base text-slate-400 mb-10 max-w-xl leading-relaxed text-balance">
+            B.Tech Information Technology student building AI agents, backend systems, and cybersecurity-oriented applications.
           </p>
           
-          <div className="flex flex-wrap items-center gap-4">
+          <div className="flex flex-wrap items-center gap-4 mb-8">
             <Link 
               href="#projects"
-              className="px-6 py-3 rounded-lg bg-brand-purple hover:bg-brand-purple/90 text-white font-medium transition-all shadow-[0_0_15px_rgba(139,92,246,0.3)] hover:shadow-[0_0_25px_rgba(139,92,246,0.5)] hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#030712]"
+              className="flex items-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-brand-purple to-brand-blue hover:opacity-90 text-white text-sm font-medium transition-all shadow-[0_0_20px_rgba(139,92,246,0.3)] focus:outline-none"
             >
-              View Selected Work
+              View My Work <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
             </Link>
-            <div className="flex items-center gap-4 ml-2">
-              <a href="https://github.com/ARBAB2171217" target="_blank" rel="noopener noreferrer" className="p-3 rounded-lg glass-card hover:bg-white/10 text-slate-300 hover:text-white transition-all hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-brand-purple" aria-label="GitHub Profile">
-                <GithubIcon className="w-5 h-5" />
-              </a>
-              <a href="https://www.linkedin.com/in/arbab-ali-848b9a389/" target="_blank" rel="noopener noreferrer" className="p-3 rounded-lg glass-card hover:bg-white/10 text-slate-300 hover:text-white transition-all hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-brand-purple" aria-label="LinkedIn Profile">
-                <LinkedinIcon className="w-5 h-5" />
-              </a>
-            </div>
+            <a 
+              href="mailto:arbab2171217@gmail.com?subject=Portfolio%20Inquiry"
+              className="flex items-center gap-2 px-6 py-3.5 rounded-xl border border-white/10 hover:bg-white/5 text-white text-sm font-medium transition-all focus:outline-none"
+            >
+              Say Hello <MailIcon className="w-4 h-4" />
+            </a>
+          </div>
+
+          <div className="flex items-center gap-4 mb-20">
+            <a href="https://github.com/ARBAB2171217" target="_blank" rel="noopener noreferrer" className="p-3.5 rounded-xl border border-white/10 hover:bg-white/5 text-slate-400 hover:text-white transition-all focus:outline-none" aria-label="GitHub Profile">
+              <GithubIcon className="w-5 h-5" />
+            </a>
+            <a href="https://www.linkedin.com/in/arbab-ali-848b9a389/" target="_blank" rel="noopener noreferrer" className="p-3.5 rounded-xl border border-white/10 hover:bg-white/5 text-slate-400 hover:text-white transition-all focus:outline-none" aria-label="LinkedIn Profile">
+              <LinkedinIcon className="w-5 h-5" />
+            </a>
+            <a href="mailto:arbab2171217@gmail.com" className="p-3.5 rounded-xl border border-white/10 hover:bg-white/5 text-slate-400 hover:text-white transition-all focus:outline-none" aria-label="Email">
+              <MailIcon className="w-5 h-5" />
+            </a>
           </div>
         </div>
         
-        {/* What I Build - Meaningful Technology Panel */}
-        <div className="flex justify-center items-center animate-fade-in-up delay-200">
-          <div className="w-full max-w-[420px] glass-card rounded-2xl overflow-hidden border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.3)] bg-[#030712]/80 backdrop-blur-xl">
-            <div className="h-12 border-b border-white/5 flex items-center px-6 bg-white/[0.02]">
-              <span className="text-xs font-bold tracking-widest text-slate-400 uppercase">What I Build</span>
-            </div>
-            
-            <div className="p-6 md:p-8 flex flex-col gap-8">
-              {/* AI AGENTS */}
-              <div className="group relative">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="w-8 h-8 rounded-lg bg-brand-purple/10 border border-brand-purple/20 flex items-center justify-center text-brand-purple">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="3"/><path d="M3 12h5"/><path d="M16 12h5"/><path d="M12 3v5"/><path d="M12 16v5"/></svg>
-                  </div>
-                  <h3 className="font-bold text-slate-200 tracking-wide text-sm">AI AGENTS</h3>
-                </div>
-                <div className="flex flex-wrap gap-2 pl-11">
-                  <span className="px-2.5 py-1 rounded bg-white/5 border border-white/5 text-xs text-slate-300 font-medium group-hover:border-brand-purple/30 group-hover:bg-brand-purple/5 transition-colors">LangChain</span>
-                  <span className="px-2.5 py-1 rounded bg-white/5 border border-white/5 text-xs text-slate-300 font-medium group-hover:border-brand-purple/30 group-hover:bg-brand-purple/5 transition-colors">LangGraph</span>
-                  <span className="px-2.5 py-1 rounded bg-white/5 border border-white/5 text-xs text-slate-300 font-medium group-hover:border-brand-purple/30 group-hover:bg-brand-purple/5 transition-colors">RAG</span>
-                </div>
+        {/* Editorial Tech Chips & Scroll */}
+        <div className="animate-fade-in-up delay-200 w-full pt-8 relative z-20">
+          <div className="flex flex-wrap gap-x-12 gap-y-8 mb-12">
+            <div className="flex items-start gap-4">
+              <div className="p-3 rounded-xl bg-brand-purple/10 border border-brand-purple/20 text-brand-purple">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
               </div>
-
-              {/* BACKEND SYSTEMS */}
-              <div className="group relative">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="w-8 h-8 rounded-lg bg-brand-blue/10 border border-brand-blue/20 flex items-center justify-center text-brand-blue">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="16" height="20" x="4" y="2" rx="2" ry="2"/><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></svg>
-                  </div>
-                  <h3 className="font-bold text-slate-200 tracking-wide text-sm">BACKEND SYSTEMS</h3>
-                </div>
-                <div className="flex flex-wrap gap-2 pl-11">
-                  <span className="px-2.5 py-1 rounded bg-white/5 border border-white/5 text-xs text-slate-300 font-medium group-hover:border-brand-blue/30 group-hover:bg-brand-blue/5 transition-colors">FastAPI</span>
-                  <span className="px-2.5 py-1 rounded bg-white/5 border border-white/5 text-xs text-slate-300 font-medium group-hover:border-brand-blue/30 group-hover:bg-brand-blue/5 transition-colors">PostgreSQL</span>
-                  <span className="px-2.5 py-1 rounded bg-white/5 border border-white/5 text-xs text-slate-300 font-medium group-hover:border-brand-blue/30 group-hover:bg-brand-blue/5 transition-colors">Redis</span>
-                </div>
-              </div>
-
-              <div className="h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent my-1"></div>
-
-              {/* CURRENTLY BUILDING */}
-              <div className="relative group">
-                <h3 className="font-bold text-slate-400 tracking-wide text-xs mb-3 uppercase">Currently Building</h3>
-                <div className="p-4 rounded-xl border border-emerald-500/20 bg-emerald-500/5 group-hover:bg-emerald-500/10 group-hover:border-emerald-500/30 transition-all duration-300 relative overflow-hidden">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 blur-[30px] -mr-16 -mt-16 pointer-events-none"></div>
-                  
-                  <div className="flex items-center justify-between mb-1 relative z-10">
-                    <h4 className="font-bold text-slate-100 text-base">CyberShield AI</h4>
-                    <div className="flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 shadow-[0_0_10px_rgba(16,185,129,0.1)]">
-                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-                      <span className="text-[9px] font-bold text-emerald-400 tracking-wider uppercase">Active Project</span>
-                    </div>
-                  </div>
-                  <p className="text-xs text-slate-400 mt-2 relative z-10">AI-Powered Cyber Fraud Intelligence Platform</p>
-                </div>
+              <div>
+                <h3 className="text-xs font-bold text-slate-100 uppercase tracking-widest mb-1.5">AI Agents</h3>
+                <p className="text-[10px] sm:text-xs text-slate-400 font-medium">LangChain <span className="text-brand-purple/50 mx-1">•</span> LangGraph <span className="text-brand-purple/50 mx-1">•</span> RAG</p>
               </div>
             </div>
+
+            <div className="flex items-start gap-4">
+              <div className="p-3 rounded-xl bg-brand-blue/10 border border-brand-blue/20 text-brand-blue">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
+              </div>
+              <div>
+                <h3 className="text-xs font-bold text-slate-100 uppercase tracking-widest mb-1.5">Backend Systems</h3>
+                <p className="text-[10px] sm:text-xs text-slate-400 font-medium">FastAPI <span className="text-brand-blue/50 mx-1">•</span> PostgreSQL <span className="text-brand-blue/50 mx-1">•</span> Redis</p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-4">
+              <div className="p-3 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-400">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path></svg>
+              </div>
+              <div>
+                <h3 className="text-xs font-bold text-slate-100 uppercase tracking-widest mb-1.5">Currently Building</h3>
+                <p className="text-[10px] sm:text-xs text-slate-400 font-medium">CyberShield AI</p>
+              </div>
+            </div>
+          </div>
+          
+          <div className="flex items-center gap-4 text-slate-500">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="opacity-70"><rect x="5" y="2" width="14" height="20" rx="7"></rect><line x1="12" y1="6" x2="12" y2="10"></line></svg>
+            <span className="text-[10px] font-bold tracking-[0.2em] uppercase">Scroll to explore</span>
           </div>
         </div>
       </div>
@@ -108,15 +125,8 @@ export const Hero = () => {
 };
 
 export const About = () => {
-  const cards = [
-    { title: "AI Development", desc: "AI Agents & Systems", color: "text-brand-purple" },
-    { title: "Backend Systems", desc: "FastAPI & Integration", color: "text-brand-blue" },
-    { title: "Cybersecurity", desc: "AI Threat Intelligence", color: "text-emerald-400" },
-    { title: "Communication", desc: "Public Speaking", color: "text-amber-400" }
-  ];
-
   return (
-    <section id="about" className="py-24 md:py-32 relative">
+    <section id="about" className="py-24 md:py-32 relative bg-white/[0.01]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center gap-4 mb-16">
           <span className="text-sm font-bold tracking-widest text-brand-purple uppercase">01 / About</span>
@@ -125,28 +135,19 @@ export const About = () => {
         
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           <div>
-            <h3 className="clamp-h2 font-bold mb-6 text-slate-50">Engineering <br/><span className="text-slate-400">Intelligence.</span></h3>
-            <div className="space-y-6 text-slate-300 text-lg leading-relaxed text-balance">
-              <p>
-                I am a 2nd Year B.Tech Information Technology student at Dr. A.P.J. Abdul Kalam Technical University (2025–2029), deeply focused on artificial intelligence and backend infrastructure.
-              </p>
-              <p>
-                My passion lies in building real-world projects—particularly AI agents and cybersecurity-oriented systems that process complex data into actionable intelligence. I believe in writing clean, deterministic code that scales gracefully.
-              </p>
-              <p>
-                Beyond the terminal, I have a strong background in communication. Frequently anchoring college events and participating in public speaking allows me to bridge the gap between complex technical architecture and human-centric design.
-              </p>
+            <h3 className="clamp-h2 font-bold mb-8 text-slate-50 leading-tight">More than <br/><span className="text-slate-400">just code.</span></h3>
+            
+            <div className="mb-8">
+              <p className="text-sm text-slate-400 font-mono mb-1">B.Tech Information Technology</p>
+              <p className="text-lg text-slate-300 font-medium">CSJMU Kanpur</p>
             </div>
-          </div>
-          
-          <div className="grid grid-cols-2 gap-4">
-            {cards.map((card, idx) => (
-              <div key={idx} className="glass-card p-6 rounded-2xl hover:bg-white/[0.04] transition-colors group">
-                <div className={`text-2xl mb-4 ${card.color}`}>●</div>
-                <h4 className="font-bold text-slate-100 mb-1">{card.title}</h4>
-                <p className="text-sm text-slate-400">{card.desc}</p>
-              </div>
-            ))}
+            
+            <p className="text-lg text-slate-400 mb-6 leading-relaxed">
+              I am an AI developer and backend engineer with a strong foundation in modern software architecture. My focus is on building intelligent, scalable systems that seamlessly integrate machine learning into practical workflows.
+            </p>
+            <p className="text-lg text-slate-400 leading-relaxed">
+              Beyond engineering, I am an experienced event anchor and public speaker, bringing strong communication and leadership skills to collaborative technical environments.
+            </p>
           </div>
         </div>
       </div>
@@ -164,20 +165,23 @@ export const Projects = () => {
         </div>
 
         {/* 1. Flagship Project - CyberShield AI */}
-        <div className="glass-card rounded-3xl overflow-hidden border-brand-purple/20 mb-8 flex flex-col-reverse lg:grid lg:grid-cols-2">
-          <div className="p-8 lg:p-12 flex flex-col justify-center">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-purple/10 border border-brand-purple/20 text-brand-purple text-xs font-bold tracking-widest uppercase mb-6 w-fit">
-              Flagship Project
-            </div>
-            <h3 className="clamp-h2 font-bold mb-2">CyberShield AI</h3>
-            <p className="text-brand-blue font-medium mb-4">AI-Powered Cyber Fraud Intelligence Platform</p>
+        <div className="mb-20">
+          <div className="flex flex-col-reverse lg:grid lg:grid-cols-[1fr_1.2fr] gap-8 lg:gap-16 items-center">
+            <div className="flex flex-col justify-center order-2 lg:order-1 w-full">
+              <div className="flex items-end gap-4 mb-4">
+                <span className="text-6xl font-bold tracking-tighter text-white/10">01</span>
+                <span className="text-brand-purple text-xs font-bold tracking-widest uppercase pb-2">Flagship</span>
+              </div>
+              
+              <h3 className="clamp-h2 font-bold mb-4 leading-tight">CyberShield AI</h3>
+              <p className="text-brand-purple font-medium mb-6">AI-Powered Cyber Fraud Intelligence Platform</p>
             
             <p className="text-lg text-slate-400 mb-8 text-balance">
-              An AI-powered cybersecurity intelligence platform for analyzing suspicious digital evidence, URLs, QR codes, screenshots, and potential cyber fraud through deterministic security checks and AI-assisted analysis.
+              An enterprise-grade URL Intelligence and digital forensics engine integrating real-time telemetry, SSL/DNS profiling, and AI-driven explainability.
             </p>
             
             <div className="space-y-3 mb-8">
-              {["Universal AI Scanner", "URL Intelligence", "QR Intelligence", "Screenshot Intelligence", "Cyber Fraud Analysis"].map(feature => (
+              {["URL Intelligence module", "Deterministic AI Forensics", "Reputation timelines", "Unified Reporting Schema"].map(feature => (
                 <div key={feature} className="flex items-center gap-3 text-slate-300">
                   <div className="w-1.5 h-1.5 rounded-full bg-brand-purple"></div>
                   {feature}
@@ -186,88 +190,76 @@ export const Projects = () => {
             </div>
 
             <div className="flex flex-wrap gap-2 mb-10">
-              {["Next.js", "TypeScript", "Python", "FastAPI", "PostgreSQL", "Redis", "Docker"].map(tag => (
+              {["React", "Next.js", "Python", "FastAPI", "Gemini API"].map(tag => (
                 <span key={tag} className="px-3 py-1 text-xs font-medium bg-white/5 border border-white/10 rounded-lg text-slate-300">
                   {tag}
                 </span>
               ))}
             </div>
 
-            <div className="flex items-center gap-4 mt-auto">
-              <a href="https://github.com/ARBAB2171217/cybersecurity_ai" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-white/10 hover:bg-white/20 text-white font-medium transition-all focus:outline-none focus:ring-2 focus:ring-brand-purple">
+            <div className="flex items-center gap-4 mt-6">
+              <a href="https://github.com/ARBAB2171217/cybersecurity_ai" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white text-[#030712] hover:bg-slate-200 font-bold transition-all focus:outline-none">
                 <GithubIcon className="w-4 h-4" /> View Code
               </a>
             </div>
           </div>
 
-          <div className="bg-[#0a0f1c] relative min-h-[300px] lg:min-h-[500px] border-b lg:border-b-0 lg:border-l border-white/5 flex items-center justify-center overflow-hidden p-8">
-            <div className="absolute inset-0 bg-grid-pattern opacity-30"></div>
-            <div className="absolute inset-0 bg-gradient-to-tr from-brand-purple/10 to-brand-blue/5"></div>
-            
-            <div className="relative w-full max-w-[500px] aspect-[4/3] rounded-xl border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] overflow-hidden flex items-center justify-center bg-black">
-              <div className="absolute top-0 left-0 right-0 h-6 bg-white/5 border-b border-white/10 flex items-center px-3 gap-1.5 z-10 backdrop-blur-md">
-                <div className="w-2 h-2 rounded-full bg-white/20"></div>
-                <div className="w-2 h-2 rounded-full bg-white/20"></div>
-                <div className="w-2 h-2 rounded-full bg-white/20"></div>
-              </div>
+          <div className="relative w-full aspect-[16/10] lg:aspect-auto lg:h-[600px] order-1 lg:order-2 group">
+            <div className="absolute inset-0 bg-brand-purple/5 border border-white/5 rounded-2xl overflow-hidden shadow-2xl">
               <ProjectImageLightbox 
                 src="/projects/cybershield/cybershield.png" 
                 alt="CyberShield AI URL Threat Intelligence dashboard" 
-                className="w-full h-full pt-6"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-102"
               />
             </div>
           </div>
         </div>
+        </div>
 
         {/* 2. Featured Project - SSBCoreAI */}
-        <div className="glass-card rounded-3xl overflow-hidden border-brand-blue/20 mb-12 lg:mb-24 flex flex-col-reverse lg:grid lg:grid-cols-2">
-          <div className="p-8 lg:p-12 flex flex-col justify-center">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-blue/10 border border-brand-blue/20 text-brand-blue text-xs font-bold tracking-widest uppercase mb-6 w-fit">
-              Featured Project
-            </div>
-            <h3 className="clamp-h2 font-bold mb-2">SSBCoreAI</h3>
-            <p className="text-emerald-400 font-medium mb-4">AI-powered SSB preparation platform</p>
-            
-            <p className="text-lg text-slate-400 mb-8 text-balance">
-              An advanced AI agent platform designed specifically for SSB preparation workflows, utilizing intelligent guidance features.
-            </p>
-            
-            <div className="space-y-3 mb-8">
-              {["Lecturette", "OIR", "PPDT", "Psychological Tests", "GTO preparation", "AI Interview", "AI-powered guidance"].map(feature => (
-                <div key={feature} className="flex items-center gap-3 text-slate-300">
-                  <div className="w-1.5 h-1.5 rounded-full bg-brand-blue"></div>
-                  {feature}
-                </div>
-              ))}
-            </div>
-
-            <div className="flex flex-wrap gap-2 mb-10">
-              {["Python", "FastAPI", "LangGraph"].map(tag => (
-                <span key={tag} className="px-3 py-1 text-xs font-medium bg-white/5 border border-white/10 rounded-lg text-slate-300">
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          <div className="bg-[#0a0f1c] relative min-h-[300px] lg:min-h-[500px] border-b lg:border-b-0 lg:border-l border-white/5 flex items-center justify-center overflow-hidden p-8">
-            <div className="absolute inset-0 bg-grid-pattern opacity-30"></div>
-            <div className="absolute inset-0 bg-gradient-to-tr from-brand-blue/10 to-emerald-500/5"></div>
-            
-            <div className="relative w-full max-w-[500px] aspect-[4/3] rounded-xl border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] overflow-hidden flex items-center justify-center bg-black">
-              <div className="absolute top-0 left-0 right-0 h-6 bg-white/5 border-b border-white/10 flex items-center px-3 gap-1.5 z-10 backdrop-blur-md">
-                <div className="w-2 h-2 rounded-full bg-white/20"></div>
-                <div className="w-2 h-2 rounded-full bg-white/20"></div>
-                <div className="w-2 h-2 rounded-full bg-white/20"></div>
+        <div className="mb-24 lg:mb-32">
+          <div className="flex flex-col-reverse lg:grid lg:grid-cols-[1.2fr_1fr] gap-8 lg:gap-16 items-center">
+            <div className="relative w-full aspect-[4/5] lg:aspect-auto lg:h-[650px] group">
+              <div className="absolute inset-0 bg-brand-blue/5 border border-white/5 rounded-2xl overflow-hidden shadow-2xl">
+                <ProjectImageLightbox 
+                  src="/projects/ssbcoreai/ssbcoreai.png" 
+                  alt="SSBCoreAI SSB preparation platform dashboard" 
+                  className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-102"
+                  imageClassName="object-top"
+                  objectPosition="top"
+                />
               </div>
-              {/* For tall images, object-top ensures the most important part is seen */}
-              <ProjectImageLightbox 
-                src="/projects/ssbcoreai/ssbcoreai.png" 
-                alt="SSBCoreAI SSB preparation platform dashboard" 
-                className="w-full h-full pt-6"
-                imageClassName="object-top"
-                objectPosition="top"
-              />
+            </div>
+
+            <div className="flex flex-col justify-center">
+              <div className="flex items-end gap-4 mb-4">
+                <span className="text-6xl font-bold tracking-tighter text-white/10">02</span>
+                <span className="text-brand-blue text-xs font-bold tracking-widest uppercase pb-2">Featured</span>
+              </div>
+              
+              <h3 className="clamp-h2 font-bold mb-4 leading-tight">SSBCoreAI</h3>
+              <p className="text-brand-blue font-medium mb-6">AI-Powered SSB Preparation Platform</p>
+            
+              <p className="text-lg text-slate-400 mb-8 text-balance">
+                An advanced AI agent platform designed specifically for SSB preparation workflows, utilizing intelligent guidance features.
+              </p>
+              
+              <div className="space-y-3 mb-8">
+                {["Lecturette", "OIR", "PPDT", "Psychological Tests", "GTO preparation", "AI Interview", "AI-powered guidance"].map(feature => (
+                  <div key={feature} className="flex items-center gap-3 text-slate-300">
+                    <div className="w-1.5 h-1.5 rounded-full bg-brand-blue"></div>
+                    {feature}
+                  </div>
+                ))}
+              </div>
+
+              <div className="flex flex-wrap gap-2 mb-10">
+                {["Python", "FastAPI", "LangGraph"].map(tag => (
+                  <span key={tag} className="px-3 py-1 text-xs font-medium bg-white/5 border border-white/10 rounded-lg text-slate-300">
+                    {tag}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
         </div>
