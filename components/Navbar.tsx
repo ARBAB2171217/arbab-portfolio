@@ -69,7 +69,7 @@ export default function Navbar() {
             </div>
             
             <a 
-              href="/resume/Arbab_Ali_Resume_Under_500KB-1.pdf"
+              href="/resume/Arbab_Ali_Resume.docx"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 px-5 py-2 rounded-full border border-brand-purple/40 text-brand-purple text-sm font-medium hover:bg-brand-purple/10 transition-colors focus:outline-none focus:ring-2 focus:ring-brand-purple"
@@ -81,7 +81,7 @@ export default function Navbar() {
           
           <div className="-mr-2 flex items-center gap-4 md:hidden">
             <a 
-              href="/resume/Arbab_Ali_Resume_Under_500KB-1.pdf"
+              href="/resume/Arbab_Ali_Resume.docx"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-brand-purple/10 border border-brand-purple/30 text-brand-purple text-xs font-medium hover:bg-brand-purple/20 transition-colors focus:outline-none focus:ring-2 focus:ring-brand-purple"
