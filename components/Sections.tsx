@@ -139,7 +139,7 @@ export const About = () => {
             
             <div className="mb-8">
               <p className="text-sm text-slate-400 font-mono mb-1">B.Tech Information Technology</p>
-              <p className="text-lg text-slate-300 font-medium">CSJMU Kanpur</p>
+              <p className="text-lg text-slate-300 font-medium">AITD</p>
             </div>
             
             <p className="text-lg text-slate-400 mb-6 leading-relaxed">

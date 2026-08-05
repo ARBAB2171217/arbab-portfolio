@@ -81,7 +81,7 @@ export const Achievements = () => {
     {
       year: "2026",
       title: "3rd Rank, Jagran Youth Parliament",
-      org: "CSJMU Kanpur",
+      org: "AITD",
       desc: "Recognized for exceptional public speaking and debate skills at the university level."
     },
     {
